@@ -5,53 +5,57 @@
 class Calculadora{
     constructor (){
         this.historico = []
-        this.ultimoResultado = 0
+        this.ultimoResultado = 0n
     }
     somar(a, b){
-        if (!b ){
-            b = a
-            a = this.ultimoResultado
+        let valor1 = a
+        let valor2 = b
+        if (!valor2){
+            valor2  = a
+            valor1 = this.ultimoResultado
         }
-        console.log(a,b )
-        this.ultimoResultado = a + b
-        this.historico.push(`${a} + ${b} = ${this.ultimoResultado}`)
-        console.log(typeof this.historico[0])
+        this.ultimoResultado = BigInt(valor1) + BigInt(valor2)
+        this.historico.push(`${valor1} + ${valor2} = ${this.ultimoResultado}`)
         return this; 
     }
     subtrair(a, b){
-        if (b === undefined){
-            b = a
-            a = this.ultimoResultado
+        let valor1 = a
+        let valor2 = b
+        if (!valor2){
+            valor2  = a
+            valor1 = this.ultimoResultado
         }
-        this.ultimoResultado = a - b
-        this.historico.push(`${a} - ${b} = ${this.ultimoResultado}`)
-        return this;
+        this.ultimoResultado = BigInt(valor1) - BigInt(valor2)
+        this.historico.push(`${valor1} - ${valor2} = ${this.ultimoResultado}`)
+        return this; 
     }
     multiplicar(a, b){
-        if (b === undefined){
-            b = a
-            a = this.ultimoResultado
+        let valor1 = a
+        let valor2 = b
+        if (!valor2){
+            valor2  = a
+            valor1 = this.ultimoResultado
         }
-        this.ultimoResultado = a * b
-        this.historico.push(`${a} * ${b} = ${this.ultimoResultado}`)
-        return this;
+        this.ultimoResultado = BigInt(valor1) * BigInt(valor2)
+        this.historico.push(`${valor1} * ${valor2} = ${this.ultimoResultado}`)
+        return this; 
     }
     dividir(a, b){
-        if (b === undefined){
-            b = a
-            a = this.ultimoResultado
+        let valor1 = a
+        let valor2 = b
+        if (!valor2){
+            valor2  = a
+            valor1 = this.ultimoResultado
         }
-        this.ultimoResultado = a / b
-        this.historico.push(`${a} / ${b} = ${this.ultimoResultado}`)
-        return this;
+        this.ultimoResultado = BigInt(valor1) / BigInt(valor2)
+        this.historico.push(`${valor1} / ${valor2} = ${this.ultimoResultado}`)
+        return this; 
     }
-
     limparHistorico(){
         this.historico = []
         this.ultimoResultado = 0
         return this
     }
-
     obterResultado(){
         return BigInt(this.ultimoResultado)
     }
@@ -68,8 +72,7 @@ ${this.historico.map((e, i) => i + 1 + ". " + e).join("\n")}
 === Fim do Histórico ===
 Foram realizadas ${this.historico.length} operações        
 Último resultado: ${this.ultimoResultado}`        
-}
-
+    }
 }
 let calc = new Calculadora()
 calc.somar(1,2)

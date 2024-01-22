@@ -4,9 +4,9 @@ function arrayDeZeroAN(n){
         return "Por favor insira um número superior a 0.";
     }
     else if(n === 0){
-        return 0;
+        return [0];
     }
-    return [n].concat(arrayDeZeroAN(n-1)).sort((a,b) => a-b);
+    return [...arrayDeZeroAN(n - 1), n]
 }
 
 console.log(arrayDeZeroAN(4))

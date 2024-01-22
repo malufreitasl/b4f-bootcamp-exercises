@@ -13,6 +13,11 @@ function volumeDoCubo(lado) {
     return lado**3
 }
 
+function superficieDoCubo(lado){
+    // escreve aqui a função
+    return 6 * lado**2;
+}
+
 function perimetroDoRectangulo(comprimento, largura) {
     // escreve aqui a função
     return comprimento*2 + largura*2
@@ -28,6 +33,11 @@ function volumeDoParalelepipedo(comprimento, largura, altura) {
     return comprimento * largura * altura
 }
 
+function superficieDoParalelepipedoQuadrado(ladodabase, comprimento){
+    // escreve aqui a função
+    return 2 * ((ladodabase**2) + (comprimento * ladodabase * 2));
+}
+
 function perimetroDoCirculo(raio) {
     // escreve aqui a função
     return 2 * Math.PI * raio
@@ -36,6 +46,11 @@ function perimetroDoCirculo(raio) {
 function areaDoCirculo(raio) {
     // escreve aqui a função
     return Math.PI*raio**2
+}
+
+function superficieDaEsfera(raio){
+    // escreve aqui a função
+    return 4 * Math.PI * raio**2;
 }
 
 function volumeDoCilindro(raio, altura) {
