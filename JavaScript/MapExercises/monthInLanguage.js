@@ -3,7 +3,7 @@ function mesPorExtensoBilingue(data, lingua){
     const MONTH = data.getMonth()
     const LANGUAGES = new Map([
         ["pt", ["Janeiro", "Fevereiro", "Março","Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"]],
-        ["en", ["Janeiro", "Fevereiro", "Março","Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"]]
+        ["en", ["January", "February", "March","April", "May", "June", "July", "August", "September", "October", "November", "December"]]
     ])
     return LANGUAGES.get(lingua)[MONTH]
 } 
